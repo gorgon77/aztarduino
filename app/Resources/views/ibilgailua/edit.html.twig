@@ -2,9 +2,10 @@
 
     {% block ekintzak %}
         <li>
-            <a href="{{ path('ibilgailua_index') }}" ><i class="fa fa-undo"></i> Zerrendara itzuli</a>
+            <a href="{{ path('ibilgailua_index') }}" ><i class="fa fa-undo"></i> {{ 'messages.zerrendara' |trans }}</a>
         </li>
-        <li><a href="#" onclick="document.forms['{{ edit_form.vars.name }}'].submit()" class="fa fa-floppy-o"> Gorde</a></li>
+        <li><a href="#" onclick="document.forms['{{ edit_form.vars.name }}'].submit()" class="fa fa-floppy-o"> {{ 'messages.gorde' |trans }}</a></li>
+        {{ parent() }}
     {% endblock %}
 
 

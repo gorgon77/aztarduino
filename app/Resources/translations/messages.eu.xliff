@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="eu" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="messages.ibilgailuak">
+                <source>messages.ibilgailuak</source>
+                <target>Ibilgailuak</target>
+            </trans-unit>
+            <trans-unit id="messages.kodea">
+                <source>messages.kodea</source>
+                <target>Kodea</target>
+            </trans-unit>
+            <trans-unit id="messages.marka">
+                <source>messages.marka</source>
+                <target>Marka</target>
+            </trans-unit>
+            <trans-unit id="messages.modeloa">
+                <source>messages.modeloa</source>
+                <target>Modeloa</target>
+            </trans-unit>
+            <trans-unit id="messages.rutakolorea">
+                <source>messages.rutakolorea</source>
+                <target>Rutaren kolorea</target>
+            </trans-unit>
+            <trans-unit id="messages.ekintzak">
+                <source>messages.ekintzak</source>
+                <target>Ekintzak</target>
+            </trans-unit>
+            <trans-unit id="messages.ibilgailuberria">
+                <source>messages.ibilgailuberria</source>
+                <target>Ibilgailu berria</target>
+            </trans-unit>
+            <trans-unit id="messages.datak">
+                <source>messages.datak</source>
+                <target>Datak</target>
+            </trans-unit>
+            <trans-unit id="messages.zerrendara">
+                <source>messages.zerrendara</source>
+                <target>Zerrendara itzuli</target>
+            </trans-unit>
+            <trans-unit id="messages.gorde">
+                <source>messages.gorde</source>
+                <target>Gorde</target>
+            </trans-unit>
+            <trans-unit id="messages.hizkuntza">
+                <source>messages.hizkuntza</source>
+                <target>Hizkuntza</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

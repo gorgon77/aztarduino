@@ -35,11 +35,23 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         {% block menua %}
-                        <li><a href="{{ path('ibilgailua_index') }}" >Ibilgailuak</a></li>
+                        <li><a href="{{ path('ibilgailua_index') }}" >{{ 'messages.ibilgailuak' |trans }}</a></li>
                         {% endblock %}
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        {% block ekintzak %}{% endblock %}
+                        {% block ekintzak %}
+                            {#<li class="list-inline"><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">ES</a></li>#}
+                            {#<li class="list-inline"><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'eu'}))}}">EU</a></li>#}
+                            {#<li class="list-inline"><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'}))}}">EN</a></li>#}
+                            <li class="dropdown ">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'messages.hizkuntza' |trans }} <b class="caret"></b></a>
+                                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">ES</a></li>
+                                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'eu'}))}}">EU</a></li>
+                                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'}))}}">EN</a></li>
+                                </ul>
+                            </li>
+                        {% endblock %}
                     </ul>
                 </div>
             </div>

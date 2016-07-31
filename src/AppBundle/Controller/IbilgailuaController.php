@@ -21,7 +21,9 @@ use AppBundle\Entity\Aztarna;
 /**
  * Ibilgailua controller.
  *
- * @Route("/ibilgailua")
+ * @Route("/ibilgailua/{_locale}")
+ *         requirements={
+ *           "_locale": "eu|es",
  */
 class IbilgailuaController extends Controller
 {
@@ -29,6 +31,7 @@ class IbilgailuaController extends Controller
      * Lists all Ibilgailua entities.
      *
      * @Route("/", name="ibilgailua_index")
+     *     }
      * @Method("GET")
      */
     public function indexAction()

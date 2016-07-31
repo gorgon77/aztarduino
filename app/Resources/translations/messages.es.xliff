@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="messages.ibilgailuak">
+                <source>messages.ibilgailuak</source>
+                <target>Vehículos</target>
+            </trans-unit>
+            <trans-unit id="messages.kodea">
+                <source>messages.kodea</source>
+                <target>Código</target>
+            </trans-unit>
+            <trans-unit id="messages.marka">
+                <source>messages.marka</source>
+                <target>Marca</target>
+            </trans-unit>
+            <trans-unit id="messages.modeloa">
+                <source>messages.modeloa</source>
+                <target>Modelo</target>
+            </trans-unit>
+            <trans-unit id="messages.rutakolorea">
+                <source>messages.rutakolorea</source>
+                <target>Color de ruta</target>
+            </trans-unit>
+            <trans-unit id="messages.ekintzak">
+                <source>messages.ekintzak</source>
+                <target>Acciones</target>
+            </trans-unit>
+            <trans-unit id="messages.ibilgailuberria">
+                <source>messages.ibilgailuberria</source>
+                <target>Nuevo vehículo</target>
+            </trans-unit>
+            <trans-unit id="messages.datak">
+                <source>messages.datak</source>
+                <target>Fechas</target>
+            </trans-unit>
+            <trans-unit id="messages.zerrendara">
+                <source>messages.zerrendara</source>
+                <target>Volver al listado</target>
+            </trans-unit>
+            <trans-unit id="messages.gorde">
+                <source>messages.gorde</source>
+                <target>Guardar</target>
+            </trans-unit>
+            <trans-unit id="messages.hizkuntza">
+                <source>messages.hizkuntza</source>
+                <target>Idioma</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

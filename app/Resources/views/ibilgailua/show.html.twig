@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+    {% block ekintzak %}
+        <li><a href="{{ path('ibilgailua_index') }}" class="fa fa-undo"> Zerrendara itzuli</a></li>
+    {% endblock %}
+    {% block menua %}
+        {{ parent() }}
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Datak <b class="caret"></b></a>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                {%  set urtea=0 %}
+                {% for eguna in egunak %}
+                    {% if (app.request.attributes.get('_route')=='ibilgailua_track') %}
+                        <li class="dropdown dropdown-submenu">
+                                {% if eguna.eguna.date|date("Y")!=urtea %}
+                                    {% set urtea = eguna.eguna.date|date("Y") %}
+                                    <a tabindex="-1" href="{{ path('ibilgailua_track', { 'id': ibilgailua.id, eguna: urtea }) }}">{{ urtea }}</a>
+                                    <ul class="dropdown-menu" id="Urteak">
+                                    {% set hilabetea=0 %}
+                                    {% for hilabeteak in egunak if (hilabeteak.eguna.date|date("Y")==urtea) %}
+                                            {% if hilabeteak.eguna.date|date("Y-m")!=hilabetea %}
+                                                <li class="dropdown-submenu">
+                                                    {% set hilabetea = hilabeteak.eguna.date|date("Y-m") %}
+                                                    <a tabindex="-1" href="{{ path('ibilgailua_track', { 'id': ibilgailua.id, eguna: hilabetea }) }}">{{ hilabetea }}</a>
+                                                    <ul class="dropdown-menu">
+                                                        {%  set egun=0 %}
+                                                        {% for egunmaila in egunak if (egunmaila.eguna.date|date("Y-m")==hilabetea) %}
+                                                            {% if egunmaila.eguna.date|date("Y-m-d")!=egun %}
+                                                                <li>
+                                                                    {% set egun = egunmaila.eguna.date|date("Y-m-d") %}
+                                                                    {#{{ egun }}#}
+                                                                    <a href="{{ path('ibilgailua_track', { 'id': ibilgailua.id, eguna: egun }) }}">{{ egun }}</a>
+                                                                </li>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                            {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                {% endif %}
+                        </li>
+
+                        {% elseif (app.request.attributes.get('_route')=='ibilgailua_show') %}
+                            <li class="dropdown dropdown-submenu">
+                                {% if eguna.eguna.date|date("Y")!=urtea %}
+                                    {% set urtea = eguna.eguna.date|date("Y") %}
+                                    <a tabindex="-1" href="{{ path('ibilgailua_show', { 'id': ibilgailua.id, eguna: urtea }) }}">{{ urtea }}</a>
+                                    <ul class="dropdown-menu" id="Urteak">
+                                        {% set hilabetea=0 %}
+                                        {% for hilabeteak in egunak if (hilabeteak.eguna.date|date("Y")==urtea) %}
+                                            {% if hilabeteak.eguna.date|date("Y-m")!=hilabetea %}
+                                                <li class="dropdown-submenu">
+                                                    {% set hilabetea = hilabeteak.eguna.date|date("Y-m") %}
+                                                    <a tabindex="-1" href="{{ path('ibilgailua_show', { 'id': ibilgailua.id, eguna: hilabetea }) }}">{{ hilabetea }}</a>
+                                                    <ul class="dropdown-menu">
+                                                        {%  set egun=0 %}
+                                                        {% for egunmaila in egunak if (egunmaila.eguna.date|date("Y-m")==hilabetea) %}
+                                                            {% if egunmaila.eguna.date|date("Y-m-d")!=egun %}
+                                                                <li>
+                                                                    {% set egun = egunmaila.eguna.date|date("Y-m-d") %}
+                                                                    <a href="{{ path('ibilgailua_show', { 'id': ibilgailua.id, eguna: egun }) }}">{{ egun }}</a>
+                                                                </li>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+
+    {% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+
+
+    <br />
+    {{ google_map(map) }}
+    {#{{ app.request.attributes.get('_route') }}#}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

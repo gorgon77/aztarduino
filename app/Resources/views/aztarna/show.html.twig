@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Aztarna</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ aztarna.id }}</td>
+            </tr>
+            <tr>
+                <th>Eguna</th>
+                <td>{% if aztarna.eguna %}{{ aztarna.eguna|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ordua</th>
+                <td>{% if aztarna.ordua %}{{ aztarna.ordua|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Longitudea</th>
+                <td>{{ aztarna.longitudea }}</td>
+            </tr>
+            <tr>
+                <th>Latitudea</th>
+                <td>{{ aztarna.latitudea }}</td>
+            </tr>
+            <tr>
+                <th>Abiadura</th>
+                <td>{{ aztarna.abiadura }}</td>
+            </tr>
+            <tr>
+                <th>Inklinazioa</th>
+                <td>{{ aztarna.inklinazioa }}</td>
+            </tr>
+            <tr>
+                <th>Malda</th>
+                <td>{{ aztarna.malda }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('aztarna_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('aztarna_edit', { 'id': aztarna.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

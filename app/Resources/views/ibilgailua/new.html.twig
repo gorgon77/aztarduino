@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+    {% block ekintzak %}
+        <li>
+            <a href="{{ path('ibilgailua_index') }}" ><i class="fa fa-undo"></i> Zerrendara itzuli</a>
+        </li>
+        <li><a href="#" onclick="document.forms['{{ form.vars.name }}'].submit()" class="fa fa-floppy-o"> Gorde</a></li>
+    {% endblock %}
+
+{% block body %}
+    <h1>Ibilgailu berria</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {#<input type="submit" value="Create" />#}
+    {{ form_end(form) }}
+
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('ibilgailua_index') }}">Back to the list</a>#}
+        {#</li>#}
+    {#</ul>#}
+{% endblock %}

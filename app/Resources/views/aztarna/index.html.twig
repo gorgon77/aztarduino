@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {#{{ google_map(map) }}#}
+    <h1>Aztarna list</h1>
+
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Eguna</th>
+                <th>Ordua</th>
+                <th>Longitudea</th>
+                <th>Latitudea</th>
+                <th>Abiadura</th>
+                <th>Inklinazioa</th>
+                <th>Malda</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for aztarna in aztarnas %}
+            <tr>
+                <td><a href="{{ path('aztarna_show', { 'id': aztarna.id }) }}">{{ aztarna.id }}</a></td>
+                <td>{% if aztarna.eguna %}{{ aztarna.eguna|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if aztarna.ordua %}{{ aztarna.ordua|date('H:i:s') }}{% endif %}</td>
+                <td>{{ aztarna.longitudea }}</td>
+                <td>{{ aztarna.latitudea }}</td>
+                <td>{{ aztarna.abiadura }}</td>
+                <td>{{ aztarna.inklinazioa }}</td>
+                <td>{{ aztarna.malda }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('aztarna_show', { 'id': aztarna.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('aztarna_edit', { 'id': aztarna.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('aztarna_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+
+    <img src="/puntua.png">
+{% endblock %}

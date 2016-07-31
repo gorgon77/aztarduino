@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+    {% block ekintzak %}
+        <li><a href="{{ path('ibilgailua_new') }}">
+                <i class="fa fa-plus-circle"></i> Ibilgailu berria</a></li>
+    {% endblock %}
+
+{% block body %}
+    <h1>Ibilgailuak</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                {#<th>Id</th>#}
+                <th>Kodea</th>
+                <th>Marka</th>
+                <th>Modeloa</th>
+                <th>Rutakolorea</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ibilgailua in ibilgailuas %}
+            <tr>
+                {#<td><a href="{{ path('ibilgailua_show', { 'id': ibilgailua.id }) }}">{{ ibilgailua.id }}</a></td>#}
+                <td>{{ ibilgailua.kodea }}</td>
+                <td>{{ ibilgailua.marka }}</td>
+                <td>{{ ibilgailua.modeloa }}</td>
+                <td>{{ ibilgailua.rutakolorea }}</td>
+                <td>
+                    <ul class="list-unstyled list-inline">
+                        {#<li><a href="{{ path('ibilgailua_show', { 'id': ibilgailua.id, eguna: '2014-07-27' }) }}">#}
+                                {#<i class="fa fa-map-marker text-danger"></i></a></li>#}
+                        <li><a href="{{ path('ibilgailua_edit', { 'id': ibilgailua.id }) }}">
+                                <i class="fa fa-pencil-square-o"></i></a></li>
+                        <li><a href="{{ path('ibilgailua_track', { 'id': ibilgailua.id, eguna: gaur }) }}">
+                                <i class="fa fa-map-marker"></i></a></li>
+                        <li><a href="{{ path('ibilgailua_show', { 'id': ibilgailua.id, eguna: gaur }) }}">
+                                <i class="fa fa-info-circle "></i></a></li>
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {#{% for eguna in egunak %}#}
+        {#{{ eguna.eguna.date | date("Y-m-d") }}<br />#}
+    {#{% endfor %}#}
+{% endblock %}

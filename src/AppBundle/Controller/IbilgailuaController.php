@@ -40,19 +40,18 @@ class IbilgailuaController extends Controller
 
         $ibilgailuas = $em->getRepository('AppBundle:Ibilgailua')->findAll();
 
-        $query = $em->createQuery('
-            SELECT DISTINCT a.eguna FROM AppBundle:Aztarna a 
-            ORDER BY a.eguna ASC
-          ');
-//        $query->setParameter('ibilgailua', $ibilgailua);
-        $egunak = $query->getResult();
+//        $query = $em->createQuery('
+//            SELECT DISTINCT a.eguna FROM AppBundle:Aztarna a
+//            ORDER BY a.eguna ASC
+//          ');
+//        $egunak = $query->getResult();
 
         $gaur=date('Y-m-d');
 
 
         return $this->render('ibilgailua/index.html.twig', array(
             'ibilgailuas' => $ibilgailuas,
-            'egunak' => $egunak,
+//            'egunak' => $egunak,
             'gaur'=>$gaur
         ));
     }

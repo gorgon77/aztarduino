@@ -11,6 +11,9 @@ use AppBundle\Form\AztarnaType;
 use Fungio\GoogleMap\Map;
 use Fungio\GoogleMap\MapTypeId;
 use Fungio\GoogleMap\Overlays\Polyline;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\ArrayAdapter;
 
 /**
  * Aztarna controller.
@@ -22,87 +25,50 @@ class AztarnaController extends Controller
     /**
      * Lists all Aztarna entities.
      *
-     * @Route("/", name="aztarna_index")
+     * @Route("/", defaults={"page" = 1}, name="aztarna_index")
+     * @Route("/page{page}", name="aztarna_index_paginated")
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction($page)
     {
-
-//        $map = $this->get('fungio_google_map.map');
-//        $marker = $this->get('fungio_google_map.marker');
-//        $marker->setPrefixJavascriptVariable('marker_');
-//        $marker->setPosition(43.341636,-1.786679, true);
-//        $map->addMarker($marker);
-//
-//        $polyline = new Polyline();
-//        $polyline->setOption('geodesic', true);
-//        $polyline->setOption('strokeColor', '#FF0000');
-//        $polyline->setOption('weight', 5);
+        $gaur=date('Y-m-d');
 
         $em = $this->getDoctrine()->getManager();
 
-        $aztarnas = $em->getRepository('AppBundle:Aztarna')->findAll();
+        $query = $em->createQuery('
+            SELECT a.eguna,a.ordua,a.longitudea,a.latitudea,a.abiadura,a.inklinazioa FROM AppBundle:Aztarna a 
+              WHERE a.eguna=:eguna
+              ORDER BY a.eguna ASC,a.ordua ASC
+          ');
+        $query->setParameter('eguna', $gaur);
+        $aztarnas = $query->getResult();
 
-//        $kont=0;
-//        foreach ($aztarnas as $puntua)
-//        {
-//            $kont++;
-//            $polyline->addCoordinate($puntua->getLatitudea(), $puntua->getLongitudea(), true);
-//        }
+//        $aztarnas = $em->getRepository('AppBundle:Aztarna')->findAll();
 
-//        $map->addPolyline($polyline);
-        return $this->render('aztarna/index.html.twig', array(
-            'aztarnas' => $aztarnas,
-//            'map' => $map
-        ));
-
-/*
-        $map = $this->get('fungio_google_map.map');
-
-        $marker = $this->get('fungio_google_map.marker');
-        $marker->setPrefixJavascriptVariable('marker_');
-        $marker->setPosition(43.341636,-1.786679, true);
-        $map->addMarker($marker);
+        $adapter = new ArrayAdapter($aztarnas);
+        $pagerfanta = new Pagerfanta($adapter);
 
 
-
-
-
-        $em = $this->getDoctrine()->getManager();
-        $aztarnas = $em->getRepository('AppBundle:Aztarna')->findAll();
-
-
-        foreach ($aztarnas as $puntua)
-        {
-            $marker = $this->get('fungio_google_map.marker');
-            $marker->setPosition($puntua->getLatitudea(),$puntua->getLongitudea(), true);
-            $marker->setIcon('/puntua.png');
-//            $marker->setOption('clickable', true);
-//            $marker->setOption('flat', true);
-
-            $map->addMarker($marker);
-//            $polyline->addCoordinate($puntua->getLatitudea(), $puntua->getLongitudea(), true);
+        try {
+            $entities = $pagerfanta
+                // Le nombre maximum d'éléments par page
+                ->setMaxPerPage('25')
+                // Notre position actuelle (numéro de page)
+                ->setCurrentPage($page)
+                // On récupère nos entités via Pagerfanta,
+                // celui-ci s'occupe de limiter la requête en fonction de nos réglages.
+                ->getCurrentPageResults()
+            ;
+        } catch (\Pagerfanta\Exception\NotValidCurrentPageException $e) {
+            throw $this->createNotFoundException("Orria ez da existitzen");
         }
 
-//        $map->addPolyline($polyline);
+
         return $this->render('aztarna/index.html.twig', array(
-            'aztarnas' => $aztarnas,
-            'map' => $map
+//            'aztarnas' => $aztarnas,
+            'aztarnas' => $entities,
+            'pager' => $pagerfanta,
         ));
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
 
     }
 

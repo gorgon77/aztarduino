@@ -2,7 +2,6 @@
 
 {% block body %}
 
-    {#{{ google_map(map) }}#}
     <h1>Aztarna list</h1>
 
     <table class="table table-responsive">
@@ -51,5 +50,13 @@
         </li>
     </ul>
 
-    <img src="/puntua.png">
+    <div class="text-center">
+        {% if aztarnas is not empty %}
+            {% if pager.haveToPaginate %}
+                {{ pagerfanta(pager, 'twitter_bootstrap3_translated', {'routeName': 'aztarna_index_paginated'}) }}
+            {% endif %}
+        {% else %}
+            <p>Ez da emaitzarik topatu</p>
+        {% endif %}
+    </div>
 {% endblock %}

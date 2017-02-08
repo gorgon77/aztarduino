@@ -46,7 +46,7 @@
       <file leaf-file-name="AztarnaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AztarnaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
+            <state relative-caret-position="68">
               <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
@@ -56,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IbilgailuaController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IbilgailuaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/IbilgailuaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
+            <state relative-caret-position="17">
               <caret line="46" column="40" selection-start-line="42" selection-start-column="2" selection-end-line="46" selection-end-column="40" />
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
@@ -70,6 +70,26 @@
                 <marker date="1470083521269" expanded="true" signature="15916:16127" ph="SELECT a.egu... AppBundle" />
                 <marker date="1470083521269" expanded="true" signature="20275:20402" ph="SELECT DISTI... AppBundle" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="132" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="132" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,7 +128,6 @@
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/UserBundle/Controller/SecurityController.php" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/web/bundles/app/css/dropdown.css" />
         <option value="$PROJECT_DIR$/web/bundles/app/css/zerbikat.css" />
@@ -126,6 +145,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/AztarnaController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/aztarna/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/IbilgailuaController.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
       </list>
     </option>
   </component>
@@ -495,15 +515,16 @@
       <workItem from="1469987205710" duration="4424000" />
       <workItem from="1469995087395" duration="4749000" />
       <workItem from="1470078590312" duration="3135000" />
+      <workItem from="1486575550049" duration="571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103814000" />
+    <option name="totallyTimeSpent" value="104385000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -746,13 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -840,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -865,19 +878,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="44" column="171" selection-start-line="42" selection-start-column="0" selection-end-line="44" selection-end-column="171" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/ibilgailua/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="9" column="48" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -899,7 +903,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AztarnaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
+        <state relative-caret-position="68">
           <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
@@ -910,7 +914,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/IbilgailuaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
+        <state relative-caret-position="17">
           <caret line="46" column="40" selection-start-line="42" selection-start-column="2" selection-end-line="46" selection-end-column="40" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
@@ -921,6 +925,22 @@
             <marker date="1470083521269" expanded="true" signature="15916:16127" ph="SELECT a.egu... AppBundle" />
             <marker date="1470083521269" expanded="true" signature="20275:20402" ph="SELECT DISTI... AppBundle" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="132" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
